@@ -1,0 +1,97 @@
+@import url('../../index.css');
+
+.card {
+    position: relative;
+    margin-left: 20px;
+    max-width: 375px;
+    padding: 20px;
+    background: var(--card-background);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card::before{
+    content: '-50%';
+    position: absolute;
+    width: 90px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8AA31;
+    color: #FFFFFF;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium);
+    line-height: 22px;
+    left: 0;
+}
+
+.card_photo {
+    width: 100%;
+}
+
+.card_description {
+    color: #ABABAB;
+}
+
+.card_title, .card_price, .card_about, .card_reviews {
+    line-height: 34px;
+}
+
+.card_title, .card_price {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    color: #141414;
+}
+
+.card_title {
+    margin-top: 19px;
+}
+
+.card_about, .card_reviews {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-normal);
+}
+
+.card_reviews {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.5);
+}
+
+.card_reviews-rating {
+    display: flex;
+    align-items: center;
+}
+
+.card_reviews-rating :not(:last-child){
+    margin-right: 10px;
+}
+
+.star-icon{
+    width: 22px;
+    height: 22px;
+}
+
+.card_action-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.like-icon {
+    width: 28px;
+    height: 25px;
+}
+
+.compare-icon {
+    width: 26px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+.like-icon, .compare-icon {
+    cursor: pointer;
+}

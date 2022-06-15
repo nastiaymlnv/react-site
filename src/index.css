@@ -1,0 +1,17 @@
+html {
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+:root{
+    --card-background: #FEFEFE;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+    --font-weigth-semibold: 700;
+    --font-size-normal: 16px;
+    --font-size-medium: 18px;
+    --font-size-large: 20px;
+    /*
+    colors: #141414 #ABABAB #E8AA31 #FFFFFF
+    */
+}
