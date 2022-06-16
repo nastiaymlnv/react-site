@@ -9,8 +9,7 @@
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card::before{
-    content: '-50%';
+.card_discount {
     position: absolute;
     width: 90px;
     height: 35px;
@@ -23,6 +22,12 @@
     font-size: var(--font-size-medium);
     line-height: 22px;
     left: 0;
+    visibility: hidden;
+}
+
+/* property for avaliable discount*/
+.card_discount__avaliable {
+    visibility: visible;
 }
 
 .card_photo {

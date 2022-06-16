@@ -8,6 +8,9 @@ export default class CatalogCard extends React.Component {
     render() {
         return(
             <section className="card">
+                <span className="card_discount card_discount__avaliable">
+                    -50%
+                </span>
                 <div className="card_photo-wrapper">
                     <img className="card_photo" src={require("../../img/nano_X1.jpg")}
                     alt="Rebook Nano X1 Adventure Women`s Shoes" />
