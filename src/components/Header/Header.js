@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import "./Header.css";
 import {ReactComponent as AccountIcon} from "../../img/account-icon.svg";
 import {ReactComponent as Logo} from "../../img/reebok-logo.svg";
