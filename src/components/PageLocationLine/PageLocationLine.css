@@ -1,0 +1,32 @@
+@import url('../../index.css');
+
+.location-section {
+    margin: 30px auto;
+    color: var(--main-color-dark);
+}
+
+.location-section_current {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-extralarge);
+    line-height: 29px;
+    margin-bottom: 25px;
+}
+
+.location-section_prev-pages {
+    display: flex;
+
+}
+
+.location-section_prev-pages-item {
+    opacity: 0.5;
+}
+
+.location-section_prev-pages-item:last-child {
+    color: var(--link-color);
+    opacity: 1;
+}
+
+.location-section_prev-pages-item:not(:last-child)::after {
+    content: url('../../img/arrow-right.svg');
+    margin: 0 15px;
+}

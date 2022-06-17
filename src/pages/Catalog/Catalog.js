@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
+import PageLocationLine from "../../components/PageLocationLine/PageLocationLine";
 
 const productsConfig = [
     {id: "id1", productName: "1Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 50},
@@ -14,6 +15,7 @@ export default class Catalog extends React.Component {
         return(
             <>
                 <Header />
+                <PageLocationLine />
                 {productsConfig.map(item => {
                     return <CatalogCard key={item.id} value={item}/>
                 })
