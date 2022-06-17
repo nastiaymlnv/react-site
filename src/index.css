@@ -3,6 +3,10 @@ html {
     font-weight: 500;
 }
 
+.link {
+    color: inherit;
+}
+
 :root{
     --card-background: #FEFEFE;
     --font-weight-medium: 500;
@@ -11,7 +15,12 @@ html {
     --font-size-normal: 16px;
     --font-size-medium: 18px;
     --font-size-large: 20px;
+    --main-color-dark: #141414;
+    --main-color-light: #FFFFFF;
+    --main-color-light-medium: #ECF1F2;
+    --text-color-dark: #000000;
+    --link-color: #E8AA31;
     /*
-    colors: #141414 #ABABAB #E8AA31 #FFFFFF
+    colors: #ABABAB
     */
 }

@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
     background-color: #E8AA31;
-    color: #FFFFFF;
+    color: var(--main-color-light);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-medium);
     line-height: 22px;
@@ -45,7 +45,7 @@
 .card_title, .card_price {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-large);
-    color: #141414;
+    color: var(--main-color-dark);
 }
 
 .card_title {

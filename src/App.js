@@ -1,11 +1,12 @@
+import React from "react";
 import './App.css';
-import CatalogCard from './components/CatalogCard/CatalogCard';
+import Catalog from './pages/Catalog/Catalog';
 
 function App() {
   return (
-    // <div className="App">
-      <CatalogCard />
-    // </div>
+    <div className="App">
+      <Catalog />
+    </div>
   );
 }
 
