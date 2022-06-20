@@ -13,7 +13,7 @@ export default class Header extends React.Component {
         return(
             <header className="header">
                 <nav className="nav-main-info">
-                    <div className="content-wrapper">
+                    <div className="content-wrapper header-wrapper">
                         <ul className="nav-main-info_list">
                             <li className="nav-main-info_list-item">
                                 <a href='#' className="header-link">
@@ -103,7 +103,7 @@ export default class Header extends React.Component {
                     </div>
                 </article>
                 <nav className="nav-categories">
-                    <div className="content-wrapper">
+                    <div className="content-wrapper header-wrapper">
                         <ul className="nav-categories-list">
                             <li className="nav-categories-list_item">
                                 <a href="#" className="header-link">

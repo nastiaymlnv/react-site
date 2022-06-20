@@ -1,0 +1,16 @@
+@import url('../../index.css');
+
+.aside {
+    max-width: 375px;
+    flex-grow: 1;
+}
+
+.multiview-page {
+    display: flex;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 812px;
+}

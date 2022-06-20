@@ -10,6 +10,7 @@ html {
 .content-wrapper, .hero-wrapper, .location-section {
     /* max-width: 1584px; */
     max-width: 1184px;
+    margin: 0 auto;
 }
 
 :root{
