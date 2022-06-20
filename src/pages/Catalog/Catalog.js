@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
 import PageLocationLine from "../../components/PageLocationLine/PageLocationLine";
 import DropdownFilterList from "../../components/DropdownFilterList/DropdownFilterList";
+import Footer from "../../components/Footer/Footer";
 
 import "./Catalog.css";
 
@@ -42,6 +43,7 @@ export default class Catalog extends React.Component {
                         }
                     </div>
                 </div>
+                <Footer />
             </>
         )
     }
