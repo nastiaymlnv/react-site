@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {ReactComponent as AccountIcon} from "../../img/account-icon.svg";
 import {ReactComponent as Logo} from "../../img/reebok-logo.svg";
@@ -18,32 +19,32 @@ export default class Header extends React.Component {
                     <div className="content-wrapper header-wrapper">
                         <ul className="nav-main-info_list">
                             <li className="nav-main-info_list-item">
-                                <a href='#' className="header-link">
+                                <Link to={'/'} className="header-link">
                                     About us
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-main-info_list-item">
-                                <a href='#' className="header-link">
+                                <Link to={'/'} className="header-link">
                                     Payment and delivery
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-main-info_list-item">
-                                <a href='#' className="header-link">
+                                <Link to={'/'} className="header-link">
                                     News
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-main-info_list-item">
-                                <a href='#' className="header-link">
+                                <Link to={'/'} className="header-link">
                                     Contacts
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         <div className="personal-account">
                             <AccountIcon className="personal-account_icon"/>
                                 <p className="personal-account_link">
-                                    <a href='#' className="header-link">
+                                    <Link to={'/'} className="header-link">
                                         Personal account
-                                    </a>
+                                    </Link>
                                 </p>
                         </div>
                     </div>
@@ -51,9 +52,9 @@ export default class Header extends React.Component {
                 <article className="hero">
                     <div className="hero-wrapper">
                         <div className="logo-wrapper">
-                            <a href="/" className="hero_logo-link">
+                            <Link to={'/'} className="hero_logo-link">
                                 <Logo className="hero_logo" />
-                            </a>
+                            </Link>
                         </div>
                         <span className="hero_search-wrapper">
                             <SearchIcon className="hero_search-icon"/>
@@ -74,9 +75,9 @@ export default class Header extends React.Component {
                                             <Arrow className="arrow-more" />
                                         </span>
                                         <p className="hero-info_call">
-                                            <a href="#" className="link">
+                                            <Link to={'/'} className="link">
                                                 Call me
-                                            </a>
+                                            </Link>
                                         </p>
                                     </div>
                                 </div>
@@ -86,18 +87,18 @@ export default class Header extends React.Component {
                             </li>
                             <li className="hero-info_item cart">
                                 <span className="cart_icon-wrapper">
-                                    <a href="#" className="link">
+                                    <Link to={'/'} className="link">
                                         <CourtIcon className="cart-icon" />
-                                    </a>
+                                    </Link>
                                 </span>
                                 <div className="cart_details">
                                     <p className="cart_price">
                                         0 uah
                                     </p>
                                     <p className="cart_order">
-                                        <a href="#" className="link">
+                                        <Link to={'/cart'} className="link">
                                             Make order
-                                        </a>
+                                        </Link>
                                     </p>
                                 </div>
                             </li>
@@ -108,29 +109,29 @@ export default class Header extends React.Component {
                     <div className="content-wrapper header-wrapper">
                         <ul className="nav-categories-list">
                             <li className="nav-categories-list_item">
-                                <a href="#" className="header-link">
+                                <Link to={'/'} className="header-link">
                                     Shoes
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-categories-list_item">
-                                <a href="#" className="header-link">
+                                <Link to={'/'} className="header-link">
                                     Clothing
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-categories-list_item">
-                                <a href="#" className="header-link">
+                                <Link to={'/'} className="header-link">
                                     Accessories
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-categories-list_item">
-                                <a href="#" className="header-link">
+                                <Link to={'/'} className="header-link">
                                     Collections
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-categories-list_item">
-                                <a href="#" className="header-link">
+                                <Link to={'/'} className="header-link">
                                     New & Trending
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

@@ -50,6 +50,11 @@
     color: var(--main-color-dark);
 }
 
+.card_title_link:hover {
+    text-decoration: underline;
+    color: var(--main-color-dark);
+}
+
 .card_title {
     margin-top: 19px;
 }

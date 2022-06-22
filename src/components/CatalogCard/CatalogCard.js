@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import {ReactComponent as FullStarIcon} from "../../img/full-star.svg";
 import {ReactComponent as ScalesIcon} from "../../img/compare-icon.svg";
@@ -32,9 +33,11 @@ export default function CatalogCard(props) {
                 alt={productName} />
             </div>
             <div className="card_description">
-                <p className="card_title">
-                    {productName}
-                </p>
+                <Link to={'/single-view/' + id} className="card_title_link">
+                    <p className="card_title">
+                        {productName}
+                    </p>
+                </Link>
                 <div className="card_about">
                     <p className="card_about-line">
                         {line}
