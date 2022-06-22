@@ -1,6 +1,8 @@
 import React, {useState} from "react";
-import './DropdownFilterList.css';
+
 import {ReactComponent as Arrow} from "../../img/open-arrow.svg";
+
+import "./DropdownFilterList.css";
 
 export default function DropdownFilterList(props) {
     const arrayItems = props.value;

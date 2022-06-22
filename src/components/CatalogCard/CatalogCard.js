@@ -1,8 +1,10 @@
 import React from "react";
-import "./CatalogCard.css";
+
 import {ReactComponent as FullStarIcon} from "../../img/full-star.svg";
 import {ReactComponent as ScalesIcon} from "../../img/compare-icon.svg";
 import {ReactComponent as HeartIcon} from "../../img/like-icon_yellow.svg";
+
+import "./CatalogCard.css";
 
 export default function CatalogCard(props) {
     const {id, productName, line, material, reviews, price, discount} = props.value;

@@ -1,6 +1,8 @@
 import React from "react";
-import './App.css';
+
 import Catalog from './pages/Catalog/Catalog';
+
+import './App.css';
 
 function App() {
   return (

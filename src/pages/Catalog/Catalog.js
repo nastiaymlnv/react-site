@@ -1,9 +1,12 @@
 import React from "react";
+
 import Header from "../../components/Header/Header";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
 import PageLocationLine from "../../components/PageLocationLine/PageLocationLine";
 import DropdownFilterList from "../../components/DropdownFilterList/DropdownFilterList";
 import Footer from "../../components/Footer/Footer";
+import Button from "../../components/Button/Button";
+import Pagination from "../../components/Pagination/Pagination";
 
 import "./Catalog.css";
 
@@ -35,12 +38,18 @@ export default class Catalog extends React.Component {
                         <DropdownFilterList value={dropdownListConfig}/>
                         <DropdownFilterList value={dropdownListConfig}/>
                     </aside>
-                    <div className="catalog">
-                        {productsConfig.map(item => {
-                            console.log(item);
-                            return <CatalogCard key={item.id} value={item}/>
-                        })
-                        }
+                    <div>
+                        <div className="catalog">
+                            {productsConfig.map(item => {
+                                console.log(item);
+                                return <CatalogCard key={item.id} value={item}/>
+                            })
+                            }
+                        </div>
+                        <div className="see-more-section">
+                            <Button className="button">See more</Button>
+                            <Pagination />
+                        </div>
                     </div>
                 </div>
                 <Footer />

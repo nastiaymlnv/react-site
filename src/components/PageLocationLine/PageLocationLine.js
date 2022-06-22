@@ -1,5 +1,6 @@
 import React from "react";
-import './PageLocationLine.css'
+
+import "./PageLocationLine.css";
 
 export default class PageLocationLine extends React.Component {
     render() {

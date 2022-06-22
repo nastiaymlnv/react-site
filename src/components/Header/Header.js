@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+
 import {ReactComponent as AccountIcon} from "../../img/account-icon.svg";
 import {ReactComponent as Logo} from "../../img/reebok-logo.svg";
 import {ReactComponent as SearchIcon} from "../../img/search-icon.svg";
@@ -7,6 +7,8 @@ import {ReactComponent as LocationIcon} from "../../img/location-icon.svg";
 import {ReactComponent as Heart} from "../../img/like-icon_black.svg";
 import {ReactComponent as Arrow} from "../../img/open-arrow.svg";
 import {ReactComponent as CourtIcon} from "../../img/court-icon.svg";
+
+import "./Header.css";
 
 export default class Header extends React.Component {
     render() {

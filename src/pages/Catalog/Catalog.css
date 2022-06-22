@@ -14,3 +14,11 @@
     flex-wrap: wrap;
     max-width: 812px;
 }
+
+.see-more-section {
+    margin-bottom: 120px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
