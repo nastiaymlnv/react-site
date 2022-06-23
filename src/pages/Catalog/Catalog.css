@@ -5,6 +5,16 @@
     flex-grow: 1;
 }
 
+.aside-title {
+    box-sizing: border-box;
+    background-color: var(--main-color-dark);
+    padding: 23px 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    line-height: 24px;
+    color: var(--main-color-light);
+}
+
 .multiview-page {
     display: flex;
 }

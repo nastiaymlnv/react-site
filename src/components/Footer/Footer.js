@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -8,105 +9,105 @@ export default function Footer() {
             <div className="content-wrapper footer-wrapper">
                 <ul className="footer-list">
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Info
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <ul className="footer-list">
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Support
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <ul className="footer-list">
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             More
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 <ul className="footer-list">
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Personal account
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                     <li className="footer-list_item">
-                        <a href="#" className="footer-list_link link">
+                        <Link to="/" className="footer-list_link link">
                             Item
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

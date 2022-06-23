@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./PageLocationLine.css";
 
@@ -11,14 +12,12 @@ export default class PageLocationLine extends React.Component {
                 </h1>
                 <ul className="location-section_prev-pages">
                     <li className="location-section_prev-pages-item">
-                        <a href="#" className="location-section_prev-pages-link link">
+                        <Link to="/" className="location-section_prev-pages-link link">
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li className="location-section_prev-pages-item">
-                        <a href="#" className="location-section_prev-pages-link link">
-                            Nano
-                        </a>
+                        Nano
                     </li>
                 </ul>
             </article>
