@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import {ReactComponent as Arrow} from "../../img/arrow__not-active.svg";
-import {ReactComponent as ArrowHovered} from "../../img/arrow__active.svg";
+import {ReactComponent as Arrow} from "../../assets/img/arrow__not-active.svg";
+import {ReactComponent as ArrowHovered} from "../../assets/img/arrow__active.svg";
 
 import "./Pagination.css";
 

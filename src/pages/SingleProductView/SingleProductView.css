@@ -4,28 +4,10 @@
     margin: 30px auto;
 }
 
-.gallery {
+.single-product-card {
     display: flex;
-    max-width: 756px;
-    flex-wrap: wrap;
 }
 
-.gallery_main-photo-wrapper {
-    margin-bottom: 16px;
-}
-
-.gallery_main-photo {
-    width: 756px;
-    height: 577px;
-    object-fit: contain;
-}
-
-.gallery_child-photo-wrapper:not(:last-child) {
-    margin-right: 16px;
-}
-
-.gallery_child-photo {
-    width: 177px;
-    height: 195px;
-    /* object-fit: contain; */
+.single-product-card_info {
+    flex-grow: 1;
 }

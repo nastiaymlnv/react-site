@@ -18,10 +18,13 @@ html {
     --font-weight-medium: 500;
     --font-weight-bold: 600;
     --font-weight-semibold: 700;
+    --font-size-extrasmall: 12px;
+    --font-size-small: 14px;
     --font-size-normal: 16px;
     --font-size-medium: 18px;
     --font-size-large: 20px;
     --font-size-extralarge: 24px;
+    --font-size-superextralarge: 30px;
     --main-color-dark: #141414;
     --main-color-light: #FFFFFF;
     --main-color-light-medium: #ECF1F2;

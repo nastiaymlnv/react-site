@@ -1,29 +1,17 @@
 import React from "react";
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
-import Catalog from './pages/Catalog/Catalog';
-import SingleProductView from "./pages/SingleProductView/SingleProductView";
-import Cart from "./pages/Cart/Cart";
-
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Router from './Router';
 import './App.css';
-import { Route, Switch } from "react-router";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path={"/"}>
-          <Catalog />
-        </Route>
-        <Route exact path={"/single-view/:id"}>
-          <SingleProductView />
-        </Route>
-        <Route exact path={"/cart"}>
-          <Cart />
-        </Route>
-      </Switch>
+  return <BrowserRouter>
+      <Header></Header>
+      <Router></Router>
+      <Footer></Footer>
     </BrowserRouter>
-  );
 }
 
 export default App;

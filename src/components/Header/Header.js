@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {ReactComponent as AccountIcon} from "../../img/account-icon.svg";
-import {ReactComponent as Logo} from "../../img/reebok-logo.svg";
-import {ReactComponent as SearchIcon} from "../../img/search-icon.svg";
-import {ReactComponent as LocationIcon} from "../../img/location-icon.svg";
-import {ReactComponent as Heart} from "../../img/like-icon_black.svg";
-import {ReactComponent as Arrow} from "../../img/open-arrow.svg";
-import {ReactComponent as CourtIcon} from "../../img/court-icon.svg";
+import {ReactComponent as AccountIcon} from "../../assets/img/account-icon.svg";
+import {ReactComponent as Logo} from "../../assets/img/reebok-logo.svg";
+import {ReactComponent as SearchIcon} from "../../assets/img/search-icon.svg";
+import {ReactComponent as LocationIcon} from "../../assets/img/location-icon.svg";
+import {ReactComponent as Heart} from "../../assets/img/like-icon_black.svg";
+import {ReactComponent as Arrow} from "../../assets/img/open-arrow.svg";
+import {ReactComponent as CourtIcon} from "../../assets/img/court-icon.svg";
 
 import "./Header.css";
 

@@ -27,6 +27,6 @@
 }
 
 .location-section_prev-pages-item:not(:last-child)::after {
-    content: url('../../img/arrow-right.svg');
+    content: url('../../assets/img/arrow-right.svg');
     margin: 0 15px;
 }

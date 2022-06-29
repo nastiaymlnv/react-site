@@ -1,12 +1,10 @@
 import React from "react";
 
-import Header from "../../components/Header/Header";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
 import PageLocationLine from "../../components/PageLocationLine/PageLocationLine";
 import RangeFilter from "../../components/RangeFilter/RangeFilter";
 import DropdownFilterList from "../../components/DropdownFilterList/DropdownFilterList";
-import Footer from "../../components/Footer/Footer";
-import Button from "../../components/Button/Button";
+import SeeMoreButton from "../../components/SeeMoreButton/SeeMoreButton";
 import Pagination from "../../components/Pagination/Pagination";
 
 import "./Catalog.css";
@@ -31,7 +29,6 @@ export default class Catalog extends React.Component {
     render() {
         return(
             <>
-                <Header />
                 <PageLocationLine />
                 <div className="content-wrapper multiview-page">
                     <aside className="aside">
@@ -55,12 +52,11 @@ export default class Catalog extends React.Component {
                             }
                         </div>
                         <div className="see-more-section">
-                            <Button className="button">See more</Button>
+                            <SeeMoreButton className="button">See more</SeeMoreButton>
                             <Pagination />
                         </div>
                     </div>
                 </div>
-                <Footer />
             </>
         )
     }

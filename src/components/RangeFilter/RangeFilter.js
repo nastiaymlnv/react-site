@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import {ReactComponent as Arrow} from "../../img/open-arrow.svg";
+import {ReactComponent as Arrow} from "../../assets/img/open-arrow.svg";
 
 import "./RangeFilter.css";
 

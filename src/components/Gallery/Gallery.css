@@ -1,0 +1,37 @@
+@import url('../../index.css');
+
+.gallery {
+    display: flex;
+    /* max-width: 756px; */
+    max-width: 550px;
+    flex-wrap: wrap;
+}
+
+.gallery_main-photo-wrapper {
+    margin-bottom: 16px;
+    background-color: #E9EAEC; /* because a user image has not the same size as an image in a popup */
+}
+
+.gallery_main-photo {
+    /* width: 756px; */
+    width: 550px;
+    height: 577px;
+    object-fit: contain;
+}
+
+.gallery_child-photo-wrapper:not(:last-child) {
+    margin-right: 16px;
+}
+
+.gallery_child-photo-wrapper {
+    /* width: 177px; */
+    width: 125.5px;
+    height: 195px;
+    overflow: hidden;
+}
+
+.gallery_child-photo {
+    width: 100%;
+    cursor: pointer;
+    transform: scale(2);
+}

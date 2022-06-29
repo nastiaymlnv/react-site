@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {ReactComponent as FullStarIcon} from "../../img/full-star.svg";
-import {ReactComponent as ScalesIcon} from "../../img/compare-icon.svg";
-import {ReactComponent as HeartIcon} from "../../img/like-icon_yellow.svg";
+import {ReactComponent as ScalesIcon} from "../../assets/img/compare-icon.svg";
+import {ReactComponent as HeartIcon} from "../../assets/img/like-icon_yellow.svg";
+import RatingStarsGenerator from "../../RatingStarsGenerator";
 
 import "./CatalogCard.css";
 
 export default function CatalogCard(props) {
     const {id, productName, line, material, reviews, price, discount} = props.value;
+    let rating = 5;
 
     const discountChecker = (item) => {
         if(item !== 0) {
@@ -29,7 +30,7 @@ export default function CatalogCard(props) {
         <article className="card">
             {discountChecker(discount)}
             <div className="card_photo-wrapper">
-                <img className="card_photo" src={require("../../img/nano_X1.jpg")}
+                <img className="card_photo" src={require("../../assets/img/nano_X1.jpg")}
                 alt={productName} />
             </div>
             <div className="card_description">
@@ -47,13 +48,7 @@ export default function CatalogCard(props) {
                     </p>
                 </div>
                 <div className="card_reviews">
-                    <div className="card_reviews-rating">
-                        <FullStarIcon className="star-icon"/>
-                        <FullStarIcon className="star-icon"/>
-                        <FullStarIcon className="star-icon"/>
-                        <FullStarIcon className="star-icon"/>
-                        <FullStarIcon className="star-icon"/>
-                    </div>
+                    { RatingStarsGenerator(rating) }
                     <p className="card_reviews-amount">
                         {reviews} reviews
                     </p>
