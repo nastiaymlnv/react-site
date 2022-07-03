@@ -55,6 +55,10 @@
     margin: 20px auto;
 }
 
+.product-description-select-options-info-list {
+    flex-grow: 1;
+}
+
 .product-description-details-info-list_item,
 .product-description-select-options-info-list_item {
     color: rgba(20, 20, 20, 0.5);
@@ -62,6 +66,7 @@
 
 .product-description-select-options-title-list {
     margin-right: 35px;
+    margin-top: 12px;
 }
 
 .product-description-select-options-title-list_item:not(:first-child, :last-child),

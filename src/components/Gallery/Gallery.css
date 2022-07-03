@@ -15,8 +15,8 @@
 .gallery_main-photo {
     /* width: 756px; */
     width: 550px;
-    height: 577px;
-    object-fit: contain;
+    height: 500px;
+    object-fit: cover;
 }
 
 .gallery_child-photo-wrapper:not(:last-child) {
@@ -26,7 +26,7 @@
 .gallery_child-photo-wrapper {
     /* width: 177px; */
     width: 125.5px;
-    height: 195px;
+    height: 110px;
     overflow: hidden;
 }
 
@@ -34,4 +34,5 @@
     width: 100%;
     cursor: pointer;
     transform: scale(2);
+    object-fit: cover;
 }

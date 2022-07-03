@@ -9,15 +9,15 @@ import Button from "../Button/Button";
 
 import "./SingleProductCharacteristic.css";
 
-export default function SingleProductCharacteristic() {
-    let rating = 5;
-    const [counter, setCounter] = useState(0);
+export default function SingleProductCharacteristic({product}) {
+    const [counter, setCounter] = useState(1);
+    let selectedArr = [];
 
-    useEffect(() => {
-        if (counter < 0) {
-            setCounter(0);
-        }
-    })
+    if (!product) { return null; }
+
+    for(let key in product.options) {
+        selectedArr.push(key);
+    }
 
     return (
         <article className="product-description">
@@ -25,9 +25,9 @@ export default function SingleProductCharacteristic() {
                 <div className="product-description-title_text">
                     <div className="product-description-title_name-wrapper">
                         <span className="product-description-title_name">
-                            Name
+                            {product.title}
                         </span>
-                        { RatingStarsGenerator(rating) }
+                        { RatingStarsGenerator(product.rating) }
                     </div>
                     <div className="card_compare-like">
                         <ScalesIcon className="compare-icon"/>
@@ -55,16 +55,16 @@ export default function SingleProductCharacteristic() {
                 </ul>
                 <ul className="product-description-details-info-list">
                     <li className="product-description-details-info-list_item">
-                        AF0000001952
+                        {product.article}
                     </li>
                     <li className="product-description-details-info-list_item">
-                        WUESTHOF (Germany)
+                        {product.trademark}
                     </li>
                     <li className="product-description-details-info-list_item">
-                        Nano X1
+                        {product.series}
                     </li>
                     <li className="product-description-details-info-list_item">
-                        38
+                        {product.bonuses}
                     </li>
                 </ul>
             </div>
@@ -84,28 +84,25 @@ export default function SingleProductCharacteristic() {
                     </li>
                 </ul>
                 <ul className="product-description-select-options-info-list">
-                    <li className="product-description-select-options-info-list_item">
-                        <UserDropdown />
-                    </li>
-                    <li className="product-description-select-options-info-list_item">
-                        <UserDropdown />
-                    </li>
-                    <li className="product-description-select-options-info-list_item">
-                        <UserDropdown />
-                    </li>
-                    <li className="product-description-select-options-info-list_item">
-                        <UserDropdown />
-                    </li>
+                    {
+                        selectedArr.map(item => {
+                            return <UserDropdown
+                                key={item}
+                                options={product.options[item]}
+                                className="product-description-select-options-info-list_item"
+                            />
+                        })
+                    }
                 </ul>
             </div>
             <div className="product-description-buy">
                 <div className="product-description-price-wrapper">
                     <span className="product-description-price">
-                        100 $
+                        {product.price} $
                     </span>
                     <div className="product-description-price-bonuses-wrapper">
                         <span className="product-description-price-bonuses">
-                            +499 points for the purchase
+                            +{product.bonuses} points for the purchase
                         </span>
                         <div className="product-description-price-hint">
                             <span> ? </span>
@@ -114,7 +111,12 @@ export default function SingleProductCharacteristic() {
                 </div>
                 <div className="buy-section">
                     <div className="product-counter">
-                        <span className="decrease-btn" onClick={() => setCounter(counter - 1)} >
+                        <span className="decrease-btn"
+                            onClick={ () => {
+                                if (counter === 1) {return;}
+                                setCounter(counter - 1) }
+                                }
+                                >
                             -
                         </span>
                         <span className="display-counter">

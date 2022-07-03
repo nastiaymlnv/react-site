@@ -19,6 +19,11 @@
     display: flex;
 }
 
+.sort-dropdown {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
 .catalog {
     display: flex;
     flex-wrap: wrap;

@@ -8,11 +8,10 @@ import RatingStarsGenerator from "../../RatingStarsGenerator";
 import "./CatalogCard.css";
 
 export default function CatalogCard(props) {
-    const {id, productName, line, material, reviews, price, discount} = props.value;
-    let rating = 5;
+    const {id, img, title, size, country, discount, responses, price, rating} = props.value;
 
     const discountChecker = (item) => {
-        if(item !== 0) {
+        if(+item !== 0) {
             return (
                 <span className="card_discount card_discount__avaliable">
                     -{item}%
@@ -30,32 +29,32 @@ export default function CatalogCard(props) {
         <article className="card">
             {discountChecker(discount)}
             <div className="card_photo-wrapper">
-                <img className="card_photo" src={require("../../assets/img/nano_X1.jpg")}
-                alt={productName} />
+                <img className="card_photo" src={img}
+                alt={title} />
             </div>
             <div className="card_description">
                 <Link to={'/single-view/' + id} className="card_title_link">
                     <p className="card_title">
-                        {productName}
+                        {title}
                     </p>
                 </Link>
                 <div className="card_about">
                     <p className="card_about-line">
-                        {line}
+                        {size}
                     </p>
                     <p className="Card_about-material">
-                        {material}
+                        {country}
                     </p>
                 </div>
                 <div className="card_reviews">
                     { RatingStarsGenerator(rating) }
                     <p className="card_reviews-amount">
-                        {reviews} reviews
+                        {responses} reviews
                     </p>
                 </div>
                 <div className="card_action-panel">
                     <p className="card_price">
-                        ${price}
+                        {price} $
                     </p>
                     <div className="card_compare-like">
                         <ScalesIcon className="compare-icon"/>

@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
+import FilterDropdownSort from "../../components/FilterDropdownSort/FilterDropdownSort";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
 import PageLocationLine from "../../components/PageLocationLine/PageLocationLine";
 import RangeFilter from "../../components/RangeFilter/RangeFilter";
@@ -9,15 +10,6 @@ import Pagination from "../../components/Pagination/Pagination";
 
 import "./Catalog.css";
 
-const productsConfig = [
-    {id: "id1", productName: "1Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 50},
-    {id: "id2", productName: "2Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 0},
-    {id: "id3", productName: "3Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 0},
-    {id: "id4", productName: "4Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 50},
-    {id: "id5", productName: "5Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 0},
-    {id: "id6", productName: "6Rebook Nano X1 Adventure W", line: "Crossfit", material: "Floatride Energy Foam", reviews: 12, price: 135, discount: 50}
-];
-
 const dropdownListConfig = [
     {id: "1", title: "Title1", name: "1Name", quantity: 100},
     {id: "2", title: "Title1", name: "2Name", quantity: 100},
@@ -25,39 +17,85 @@ const dropdownListConfig = [
     {id: "4", title: "Title1", name: "4Name", quantity: 100}
 ];
 
-export default class Catalog extends React.Component {
-    render() {
-        return(
-            <>
-                <PageLocationLine />
-                <div className="content-wrapper multiview-page">
-                    <aside className="aside">
-                        <h2 className="aside-title">
-                            Filters
-                        </h2>
-                        <RangeFilter />
-                        <DropdownFilterList value={dropdownListConfig}/>
-                        <DropdownFilterList value={dropdownListConfig}/>
-                        <DropdownFilterList value={dropdownListConfig}/>
-                        <DropdownFilterList value={dropdownListConfig}/>
-                        <DropdownFilterList value={dropdownListConfig}/>
-                        <RangeFilter />
-                        <RangeFilter />
-                    </aside>
-                    <div>
-                        <div className="catalog">
-                            {productsConfig.map(item => {
-                                return <CatalogCard key={item.id} value={item}/>
-                            })
-                            }
-                        </div>
-                        <div className="see-more-section">
-                            <SeeMoreButton className="button">See more</SeeMoreButton>
-                            <Pagination />
-                        </div>
-                    </div>
-                </div>
-            </>
+const sortingOptions = [
+    {id: 1, name: 'By popularity', sortingField: 'reviews'},
+    {id: 2, name: 'By price',  sortingField: 'price'},
+    {id: 3, name: 'By rating',  sortingField: 'rating'},
+];
+
+export default function Catalog() {
+    const [itemsList, setItemsList] = useState([]);
+    const [sortingIndex, setSortingIndex] = useState(0);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:3001/productsList');
+            if (response.ok) {
+                const results = await response.json();
+                setItemsList(results);
+            }
+        }
+        catch {
+            alert('Failed to fetch');
+        }
+    }
+
+    const onSelect = index => {
+        setSortingIndex(index);
+
+        const {sortingField} = sortingOptions[index];
+
+        setItemsList([...itemsList].sort((pr1, pr2) => {
+            console.log(pr1);
+            console.log(pr2);
+            if(pr1[sortingField] > pr2[sortingField]) {
+                return 1;
+            } else if(pr1[sortingField] < pr2[sortingField]) {
+                return -1;
+            }
+
+            return 0;
+            })
         )
     }
+
+    return(
+        <>
+            <PageLocationLine />
+            <div className="content-wrapper multiview-page">
+                <aside className="aside">
+                    <h2 className="aside-title">
+                        Filters
+                    </h2>
+                    <RangeFilter />
+                    <DropdownFilterList value={dropdownListConfig}/>
+                    <DropdownFilterList value={dropdownListConfig}/>
+                    <DropdownFilterList value={dropdownListConfig}/>
+                    <DropdownFilterList value={dropdownListConfig}/>
+                    <DropdownFilterList value={dropdownListConfig}/>
+                    <RangeFilter />
+                    <RangeFilter />
+                </aside>
+                <div className="content">
+                    <div className="sort-dropdown">
+                        <FilterDropdownSort options={sortingOptions} onSelect={onSelect} selectedIndex={sortingIndex}/>
+                    </div>
+                    <div className="catalog">
+                        {itemsList.map(item => {
+                            return <CatalogCard key={item.id} value={item}/>
+                        })
+                        }
+                    </div>
+                    <div className="see-more-section">
+                        <SeeMoreButton className="button">See more</SeeMoreButton>
+                        <Pagination />
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
