@@ -67,22 +67,24 @@ h2 + .range .range_body {
     border-radius: 0 2px 2px 0;
 }
 
-.range_slider {
-    width: 100%;
-    -webkit-appearance: none;
-}
-
-.range_slider::-webkit-slider-runnable-track {
-    width: 100%;
+.slider {
+    background-color: var(--text-color-dark);
+    width: 312px;
     height: 2px;
-    cursor: pointer;
-    background: var(--text-color-dark);
+    position: relative;
 }
 
-.range_slider::-webkit-slider-thumb {
-    border-radius: 50%;
-    height: 18px;
+.thumb {
     width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-radius: 50%;
+    border: 3px solid var(--link-color);
+    transform: translate(-50%, -50%);
+    background-color: var(--text-color-dark);
     cursor: pointer;
-    margin-top: -7px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.3);
 }
