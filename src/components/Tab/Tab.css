@@ -1,0 +1,39 @@
+@import url('../../index.css');
+
+.tab-window {
+    padding: 30px 30px 16px 30px;
+    background: var(--card-background);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.tab-titles {
+    display: flex;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+}
+
+.tab-name {
+    cursor: pointer;
+    padding-bottom: 20px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    color: rgba(20, 20, 20, 0.5);
+    margin-right: 60px;
+}
+
+.tab-name_active {
+    font-weight: var(--font-weight-semibold);
+    color: var(--main-color-dark);
+    border-bottom: 2px solid var(--link-color);
+    box-sizing: border-box;
+}
+
+.tab-pages {
+    padding-top: 44px;
+}
+
+.tab-content {
+    font-size: var(--font-size-medium);
+    line-height: 27px;
+    color: var(--main-color-dark);
+}

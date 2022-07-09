@@ -53,10 +53,6 @@ export default function RangeFilter({min=50, max=200}) {
 
         });
 
-        return () => {
-            document.removeEventListener('mousedown');
-        }
-
     }, []);
 
     useEffect(() => {

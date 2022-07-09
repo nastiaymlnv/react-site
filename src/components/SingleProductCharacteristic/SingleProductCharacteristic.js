@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import UserDropdown from "../UserDropdown/UserDropdown";
 import {ReactComponent as ScalesIcon} from "../../assets/img/compare-icon.svg";
@@ -12,8 +12,6 @@ import "./SingleProductCharacteristic.css";
 export default function SingleProductCharacteristic({product}) {
     const [counter, setCounter] = useState(1);
     let selectedArr = [];
-
-    if (!product) { return null; }
 
     for(let key in product.options) {
         selectedArr.push(key);

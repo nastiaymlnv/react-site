@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Gallery from "../../components/Gallery/Gallery";
 import SingleProductCharacteristic from "../../components/SingleProductCharacteristic/SingleProductCharacteristic";
+import Tab from "../../components/Tab/Tab";
 
 import "./SingleProductView.css";
 
@@ -28,16 +29,21 @@ export default function SingleProductView() {
         }
     }
 
+    if (!item) { return null; }
+
     return(
         <>
             <h1 className="temporary-item-instead-history">
                 This is single page view of product with id: {params.id} (Temporary header instead of the history)
             </h1>
             <div className="single-product-card content-wrapper">
-                <Gallery product={item}/>
+                <Gallery images={item.images}/>
                 <div className="single-product-card_info">
                     <SingleProductCharacteristic product={item}/>
                 </div>
+            </div>
+            <div className="tab-wrapper content-wrapper">
+                <Tab tabs={item.tabs}/>
             </div>
         </>
     )

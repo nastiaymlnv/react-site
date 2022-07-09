@@ -11,3 +11,7 @@
 .single-product-card_info {
     flex-grow: 1;
 }
+
+.tab-wrapper {
+    margin: 120px auto;
+}
