@@ -7,12 +7,15 @@ import Tab from "../../components/Tab/Tab";
 
 import "./SingleProductView.css";
 
-export default function SingleProductView() {
+const SingleProductView = () => {
     let params = useParams();
 
     const [item, setItem] = useState(null);
 
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
+        setIsLoading(true);
         fetchItemData();
     }, []);
 
@@ -26,6 +29,9 @@ export default function SingleProductView() {
         }
         catch {
             alert('Failed to fetch');
+        } finally {
+            // setIsLoading(false);
+            setTimeout(()=> setIsLoading(false), 1000)
         }
     }
 
@@ -37,14 +43,16 @@ export default function SingleProductView() {
                 This is single page view of product with id: {params.id} (Temporary header instead of the history)
             </h1>
             <div className="single-product-card content-wrapper">
-                <Gallery images={item.images}/>
+                <Gallery images={item.images} loading={isLoading}/>
                 <div className="single-product-card_info">
-                    <SingleProductCharacteristic product={item}/>
+                    <SingleProductCharacteristic product={item} loading={isLoading}/>
                 </div>
             </div>
             <div className="tab-wrapper content-wrapper">
-                <Tab tabs={item.tabs}/>
+                <Tab tabs={item.tabs} loading={isLoading}/>
             </div>
         </>
     )
 }
+
+export default SingleProductView;

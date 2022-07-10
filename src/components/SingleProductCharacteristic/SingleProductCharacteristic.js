@@ -6,10 +6,11 @@ import {ReactComponent as HeartIcon} from "../../assets/img/like-icon_yellow.svg
 import {ReactComponent as CartIcon} from "../../assets/img/cart-icon_white.svg";
 import RatingStarsGenerator from "../../RatingStarsGenerator";
 import Button from "../Button/Button";
+import withLoader from "../../hocs/withLoader";
 
 import "./SingleProductCharacteristic.css";
 
-export default function SingleProductCharacteristic({product}) {
+const SingleProductCharacteristic = ({product}) => {
     const [counter, setCounter] = useState(1);
     let selectedArr = [];
 
@@ -139,3 +140,5 @@ export default function SingleProductCharacteristic({product}) {
         </article>
     )
 }
+
+export default withLoader(SingleProductCharacteristic);

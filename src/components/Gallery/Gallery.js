@@ -1,8 +1,9 @@
 import React from "react";
+import withLoader from "../../hocs/withLoader";
 
 import "./Gallery.css"
 
-export default function Gallery({images}) {
+const Gallery = ({images}) => {
     const ref = React.createRef();
 
     const changeImage = (e) => { ref.current.src = e.target.src; }
@@ -22,3 +23,5 @@ export default function Gallery({images}) {
         </article>
     )
 }
+
+export default withLoader(Gallery);

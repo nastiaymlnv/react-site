@@ -1,8 +1,9 @@
 import React, {useState} from "react";
+import withLoader from "../../hocs/withLoader";
 
 import "./Tab.css";
 
-export default function Tab ({tabs}) {
+const Tab = ({tabs}) => {
     const [index, setIndex] = useState(0);
 
     return <div className="tab-window">
@@ -25,3 +26,5 @@ export default function Tab ({tabs}) {
         </div>
     </div>
 }
+
+export default withLoader(Tab);
