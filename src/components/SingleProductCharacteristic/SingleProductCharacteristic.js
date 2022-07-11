@@ -4,7 +4,7 @@ import UserDropdown from "../UserDropdown/UserDropdown";
 import {ReactComponent as ScalesIcon} from "../../assets/img/compare-icon.svg";
 import {ReactComponent as HeartIcon} from "../../assets/img/like-icon_yellow.svg";
 import {ReactComponent as CartIcon} from "../../assets/img/cart-icon_white.svg";
-import RatingStarsGenerator from "../../RatingStarsGenerator";
+import RatingStarsGenerator from "../RatingStarsGenerator/RatingStarsGenerator";
 import Button from "../Button/Button";
 import withLoader from "../../hocs/withLoader";
 
@@ -26,7 +26,7 @@ const SingleProductCharacteristic = ({product}) => {
                         <span className="product-description-title_name">
                             {product.title}
                         </span>
-                        { RatingStarsGenerator(product.rating) }
+                        <RatingStarsGenerator rating={product.rating} />
                     </div>
                     <div className="card_compare-like">
                         <ScalesIcon className="compare-icon"/>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import {ReactComponent as ScalesIcon} from "../../assets/img/compare-icon.svg";
 import {ReactComponent as HeartIcon} from "../../assets/img/like-icon_yellow.svg";
-import RatingStarsGenerator from "../../RatingStarsGenerator";
+import RatingStarsGenerator from "../RatingStarsGenerator/RatingStarsGenerator";
 
 import "./CatalogCard.css";
 
@@ -47,7 +47,7 @@ export default function CatalogCard(props) {
                     </p>
                 </div>
                 <div className="card_reviews">
-                    { RatingStarsGenerator(rating) }
+                    <RatingStarsGenerator rating={rating} />
                     <p className="card_reviews-amount">
                         {responses} reviews
                     </p>
