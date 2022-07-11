@@ -5,7 +5,7 @@ import "./Button.css";
 
 export default function Button(props) {
     return(
-        <Link to="/" className="btn-link link">
+        <Link to={props.link} className="btn-link link">
             <div className="buy-btn">
                 {props.children}
             </div>

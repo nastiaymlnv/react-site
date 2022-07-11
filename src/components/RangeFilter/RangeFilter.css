@@ -1,5 +1,3 @@
-@import url('../../index.css');
-
 h2 + .range .range_title-wrapper {
     color: var(--main-color-dark);
     background-color: var(--main-color-light);

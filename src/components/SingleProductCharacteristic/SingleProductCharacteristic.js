@@ -126,13 +126,13 @@ const SingleProductCharacteristic = ({product}) => {
                         </span>
                     </div>
                     <span className="add-btn">
-                        <Button>
+                        <Button link="/">
                             In cart
                             <CartIcon className="cart-icon"/>
                         </Button>
                     </span>
                     <span className="quick-buy-btn">
-                        <Button> Buy in 1 click </Button>
+                        <Button link="/cart"> Buy in 1 click </Button>
                     </span>
                 </div>
 
