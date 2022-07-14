@@ -25,7 +25,7 @@ export default function RangeFilter({min=50, max=200}) {
             return false;
         };
 
-        document.addEventListener('mousedown', (e) => {
+        const changePosition = (e) => {
             const target = e.target;
 
             if(target.classList.contains('thumb')) {
@@ -47,11 +47,15 @@ export default function RangeFilter({min=50, max=200}) {
 
                 document.addEventListener('mouseup', () => {
                     document.removeEventListener('mousemove', moveHandler);
-                });
-
+                }, {once: true});
             }
+        }
 
-        });
+        document.addEventListener('mousedown', changePosition);
+
+        return () => {
+            document.removeEventListener('mousedown', changePosition);
+        }
 
     }, []);
 
