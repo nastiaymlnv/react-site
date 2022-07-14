@@ -34,7 +34,7 @@ export default function UserDropdown({options}) {
             </div>
             <div className={selectState} onClick={handleEvent}>
                 {options.map(item => {
-                    return <p className="select-option"> {item} </p>
+                    return <p key={Math.random()} className="select-option"> {item} </p>
                 })}
             </div>
         </div>

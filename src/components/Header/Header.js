@@ -87,7 +87,7 @@ export default class Header extends React.Component {
                             </li>
                             <li className="hero-info_item cart">
                                 <span className="cart_icon-wrapper">
-                                    <Link to={'/'} className="link">
+                                    <Link to={'/cart'} className="link">
                                         <CourtIcon className="cart-icon" />
                                     </Link>
                                 </span>

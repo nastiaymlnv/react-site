@@ -7,7 +7,7 @@ const RatingStarsGenerator = ({rating}) => {
     let starsAmountArr = [];
 
     for (let i = 0; i < rating; i++){
-        starsAmountArr.push(<FullStarIcon className="star-icon"/>)
+        starsAmountArr.push(<FullStarIcon key={Math.random()} className="star-icon"/>)
     }
 
     return <div className="rating">

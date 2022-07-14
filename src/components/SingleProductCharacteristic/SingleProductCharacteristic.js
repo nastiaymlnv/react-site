@@ -18,6 +18,39 @@ const SingleProductCharacteristic = ({product}) => {
         selectedArr.push(key);
     }
 
+    const amountDecreaser = () => {
+        if (counter === 1) {return;}
+        setCounter(counter - 1);
+    }
+
+    const amountincreaser = () => {
+        setCounter(counter + 1)
+    }
+
+    const addToStorage = () => {
+        const data = JSON.stringify({
+            id: product.id,
+            name: product.title,
+            img: product.images[0],
+            amount: counter,
+            options: ['opt1', 'opt2', 'opt3'],
+            price: product.price
+        });
+
+        let keys = Object.keys(localStorage);
+
+        if (localStorage.length !== 0) {
+            for (let key of keys) {
+                if (key !== product.id) {
+                    localStorage.setItem(product.id, data);
+                }
+            }
+        } else {
+            localStorage.setItem(product.id, data);
+        }
+        // localStorage.clear();
+    }
+
     return (
         <article className="product-description">
             <div className="product-description-title">
@@ -111,27 +144,23 @@ const SingleProductCharacteristic = ({product}) => {
                 <div className="buy-section">
                     <div className="product-counter">
                         <span className="decrease-btn"
-                            onClick={ () => {
-                                if (counter === 1) {return;}
-                                setCounter(counter - 1) }
-                                }
-                                >
+                            onClick={amountDecreaser} >
                             -
                         </span>
                         <span className="display-counter">
                             {counter}
                         </span>
-                        <span className="increase-btn" onClick={() => setCounter(counter + 1)} >
+                        <span className="increase-btn" onClick={amountincreaser} >
                             +
                         </span>
                     </div>
-                    <span className="add-btn">
-                        <Button link="/">
+                    <span className="add-btn" onClick={addToStorage}>
+                        <Button link="/single-view/:id">
                             In cart
                             <CartIcon className="cart-icon"/>
                         </Button>
                     </span>
-                    <span className="quick-buy-btn">
+                    <span className="quick-buy-btn" onClick={addToStorage}>
                         <Button link="/cart"> Buy in 1 click </Button>
                     </span>
                 </div>
