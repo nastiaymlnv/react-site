@@ -143,8 +143,7 @@
     position: relative;
 }
 
-.cart_icon-wrapper::after {
-    content: '0';
+.cart_popup-counter {
     position: absolute;
     width: 14px;
     height: 14px;
@@ -159,8 +158,6 @@
     right: -6px;
     top: 0;
 }
-
-/* add counter on the top of the cart*/
 
 .cart_details {
     line-height: 20px;

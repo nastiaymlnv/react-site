@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addToCart } from "../../reducers/cart";
 
 import UserDropdown from "../UserDropdown/UserDropdown";
 import {ReactComponent as ScalesIcon} from "../../assets/img/compare-icon.svg";
@@ -13,6 +16,15 @@ import "./SingleProductCharacteristic.css";
 const SingleProductCharacteristic = ({product}) => {
     const [counter, setCounter] = useState(1);
     let selectedArr = [];
+    let idArr = [];
+
+    const dispatch = useDispatch();
+
+    const cart = useSelector(state => state.cart);
+
+    cart.map(item => {
+        return idArr.push(item.id);
+    })
 
     for(let key in product.options) {
         selectedArr.push(key);
@@ -28,27 +40,18 @@ const SingleProductCharacteristic = ({product}) => {
     }
 
     const addToStorage = () => {
-        const data = JSON.stringify({
+        const data = {
             id: product.id,
             name: product.title,
             img: product.images[0],
             amount: counter,
             options: ['opt1', 'opt2', 'opt3'],
             price: product.price
-        });
+        };
 
-        let keys = Object.keys(localStorage);
-
-        if (localStorage.length !== 0) {
-            for (let key of keys) {
-                if (key !== product.id) {
-                    localStorage.setItem(product.id, data);
-                }
-            }
-        } else {
-            localStorage.setItem(product.id, data);
+        if (cart.length === 0 || !idArr.includes(data.id)) {
+            dispatch(addToCart(data));
         }
-        // localStorage.clear();
     }
 
     return (
