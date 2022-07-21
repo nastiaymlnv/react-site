@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from "react";
 
+import { useDispatch, useSelector, useStore } from 'react-redux';
+
+import { fetchProducts } from "../../reducers/fetchProductsReducer";
+
 import FilterDropdownSort from "../../components/FilterDropdownSort/FilterDropdownSort";
 import CatalogCard from "../../components/CatalogCard/CatalogCard";
 import PageLocationLine from "../../components/PageLocationLine/PageLocationLine";
@@ -24,8 +28,11 @@ const sortingOptions = [
 ];
 
 export default function Catalog() {
-    const [itemsList, setItemsList] = useState([]);
     const [sortingIndex, setSortingIndex] = useState(0);
+
+    const store = useStore();
+    const dispatch = useDispatch();
+    const products = useSelector(state => state.products);
 
     useEffect(() => {
         fetchData();
@@ -36,7 +43,7 @@ export default function Catalog() {
             const response = await fetch('http://localhost:3001/productsList');
             if (response.ok) {
                 const results = await response.json();
-                setItemsList(results);
+                dispatch(fetchProducts(results));
             }
         }
         catch {
@@ -49,7 +56,7 @@ export default function Catalog() {
 
         const {sortingField} = sortingOptions[index];
 
-        setItemsList([...itemsList].sort((pr1, pr2) => {
+        products([...products].sort((pr1, pr2) => {
             console.log(pr1);
             console.log(pr2);
             if(pr1[sortingField] > pr2[sortingField]) {
@@ -85,7 +92,7 @@ export default function Catalog() {
                         <FilterDropdownSort options={sortingOptions} onSelect={onSelect} selectedIndex={sortingIndex}/>
                     </div>
                     <div className="catalog">
-                        {itemsList.map(item => {
+                        {products.map(item => {
                             return <CatalogCard key={item.id} value={item}/>
                         })
                         }
