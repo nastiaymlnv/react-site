@@ -18,23 +18,21 @@ import "./Header.css";
 
 export default function Header () {
     const store = useStore();
-    const cart = useSelector(state => state.cart);
+    const storage = useSelector(state => state.cart);
 
-    let storage = JSON.parse(localStorage.getItem('cart'));
+    const calcTotalInHeader = () => {
+        const summary = storage.reduce((prevVal, currVal) => {
+            prevVal[0] += currVal.amount;
+            prevVal[1] += currVal.amount * currVal.price;
+            
+            return prevVal;
+        }, [0, 0]);
 
-    if (storage === null) {
-        storage = [];
-    }
-
-    const itemsToBuy = () => {
-        let counter = 0;
-        storage.forEach(item => counter += item.amount);
-
-        return counter;
+        return summary;
     }
 
     useEffect(() => {
-        itemsToBuy();
+        calcTotalInHeader();
     }, [storage])
 
     return (
@@ -115,12 +113,12 @@ export default function Header () {
                                     <CourtIcon className="cart-icon" />
                                 </Link>
                                 <span className="cart_popup-counter">
-                                    {itemsToBuy()}
+                                    {calcTotalInHeader()[0]}
                                 </span>
                             </span>
                             <div className="cart_details">
                                 <p className="cart_price">
-                                    {localStorage.getItem('cartSummary') || "0"}$
+                                    {calcTotalInHeader()[1]}$
                                 </p>
                                 <p className="cart_order">
                                     <Link to={'/cart'} className="link">

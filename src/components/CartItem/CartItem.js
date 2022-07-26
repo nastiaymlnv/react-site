@@ -38,7 +38,7 @@ export default function CartItem({value, deleteItemFromStorage}) {
             </span>
             {amount * price}$
         </div>
-        <div className="delete-btn" onClick={() => deleteItemFromStorage(id, amount * price)}>
+        <div className="delete-btn" onClick={() => deleteItemFromStorage(id)}>
             <DeleteIcon />
         </div>
     </div>
