@@ -21,6 +21,13 @@ const dropdownListConfig = [
     {id: "4", title: "Title1", name: "4Name", quantity: 100}
 ];
 
+const dropdownListCountry = [
+    {id: "1", title: "Country", name: "Ukraine", quantity: 2},
+    {id: "2", title: "Country", name: "Poland", quantity: 2},
+    {id: "3", title: "Country", name: "UK", quantity: 1},
+    {id: "4", title: "Country", name: "Bulgaria", quantity: 1}
+];
+
 const sortingOptions = [
     {id: 1, name: 'By popularity', sortingField: 'reviews'},
     {id: 2, name: 'By price',  sortingField: 'price'},
@@ -28,11 +35,13 @@ const sortingOptions = [
 ];
 
 export default function Catalog() {
+    const [itemsList, setItemsList] = useState([]);
     const [sortingIndex, setSortingIndex] = useState(0);
 
     const store = useStore();
     const dispatch = useDispatch();
     const products = useSelector(state => state.products);
+    let checkedCountriesIdArr = [];
 
     useEffect(() => {
         fetchData();
@@ -43,6 +52,7 @@ export default function Catalog() {
             const response = await fetch('http://localhost:3001/productsList');
             if (response.ok) {
                 const results = await response.json();
+                setItemsList(results);
                 dispatch(fetchProducts(results));
             }
         }
@@ -56,9 +66,7 @@ export default function Catalog() {
 
         const {sortingField} = sortingOptions[index];
 
-        products([...products].sort((pr1, pr2) => {
-            console.log(pr1);
-            console.log(pr2);
+        setItemsList([...products].sort((pr1, pr2) => {
             if(pr1[sortingField] > pr2[sortingField]) {
                 return 1;
             } else if(pr1[sortingField] < pr2[sortingField]) {
@@ -66,8 +74,24 @@ export default function Catalog() {
             }
 
             return 0;
-            })
-        )
+        }))
+
+    }
+
+    const filterByCountry = (id) => {
+        let checkedId = id - 1;
+
+        if (checkedCountriesIdArr.includes(id)) {
+            console.log('includes')
+            checkedCountriesIdArr = checkedCountriesIdArr.filter(elem => elem !== id);
+        } else {
+            checkedCountriesIdArr = [...checkedCountriesIdArr, dropdownListCountry[checkedId].id];
+        }
+        console.log(checkedCountriesIdArr);
+
+        setItemsList(products.filter(item => item.country === dropdownListCountry[checkedId].name));
+
+        return checkedCountriesIdArr;
     }
 
     return(
@@ -79,7 +103,7 @@ export default function Catalog() {
                         Filters
                     </h2>
                     <RangeFilter />
-                    <DropdownFilterList value={dropdownListConfig}/>
+                    <DropdownFilterList value={dropdownListCountry} filterByCountry={filterByCountry} />
                     <DropdownFilterList value={dropdownListConfig}/>
                     <DropdownFilterList value={dropdownListConfig}/>
                     <DropdownFilterList value={dropdownListConfig}/>
@@ -92,7 +116,7 @@ export default function Catalog() {
                         <FilterDropdownSort options={sortingOptions} onSelect={onSelect} selectedIndex={sortingIndex}/>
                     </div>
                     <div className="catalog">
-                        {products.map(item => {
+                        {itemsList.map(item => {
                             return <CatalogCard key={item.id} value={item}/>
                         })
                         }

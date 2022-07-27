@@ -1,12 +1,14 @@
 import React, {useState} from "react";
+import { useRef } from "react";
 
 import {ReactComponent as Arrow} from "../../assets/img/open-arrow.svg";
 
 import "./DropdownFilterList.css";
 
-export default function DropdownFilterList(props) {
-    const arrayItems = props.value;
+export default function DropdownFilterList({value, filterByCountry}) {
+    const arrayItems = value;
     const [open, setOpen] = useState(true);
+    let ref = useRef();
 
     return(
         <article className="dropdown">
@@ -21,7 +23,9 @@ export default function DropdownFilterList(props) {
                     return (
                         <li key={item.id} className="dropdown_list-item">
                             <label className="dropdown_list-label">
-                                <input type="checkbox" className="dropdown_list-checkmark" />
+                                <input ref={ref} id={item.id} type="checkbox" className="dropdown_list-checkmark" onClick={() => {
+                                    filterByCountry(item.id);
+                                    }}/>
                                 <span className="dropdown_list-item-name">{item.name}</span>
                                 <span className="dropdown_list_quantity">
                                     ({item.quantity})

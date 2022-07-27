@@ -7,7 +7,7 @@ html {
     color: inherit;
 }
 
-.content-wrapper, .hero-wrapper, .location-section {
+.content-wrapper, .hero-wrapper {
     /* max-width: 1584px; */
     max-width: 1184px;
     margin: 0 auto;
