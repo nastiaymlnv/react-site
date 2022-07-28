@@ -1,0 +1,23 @@
+.footer {
+    background-color: var(--main-color-dark);
+    padding-top: 102px;
+    padding-bottom: 58px;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list li:first-child {
+    text-transform: uppercase;
+    color:  var(--main-color-light);
+    margin-bottom: 20px;
+}
+
+.footer-list_item {
+    font-size: var(--font-size-medium);
+    line-height: 27px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+}

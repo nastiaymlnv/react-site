@@ -1,0 +1,12 @@
+.cart-header {
+    margin: 30px auto;
+}
+
+.cart-header, .total-price {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-extralarge);
+}
+
+.total-price {
+    margin-bottom: 30px;
+}
