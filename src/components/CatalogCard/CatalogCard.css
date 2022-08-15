@@ -1,0 +1,100 @@
+.card {
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 365px;
+    padding: 20px;
+    background: var(--card-background);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.card_discount {
+    position: absolute;
+    width: 90px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8AA31;
+    color: var(--main-color-light);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-medium);
+    line-height: 22px;
+    left: 0;
+    visibility: hidden;
+}
+
+/* property for avaliable discount*/
+.card_discount__avaliable {
+    visibility: visible;
+}
+
+.card_photo {
+    width: 100%;
+    height: 325px;
+    object-fit: cover;
+}
+
+.card_description {
+    color: #ABABAB;
+}
+
+.card_title, .card_price, .card_about, .card_reviews {
+    line-height: 34px;
+}
+
+.card_title, .card_price {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    color: var(--main-color-dark);
+}
+
+.card_title_link:hover {
+    text-decoration: underline;
+    color: var(--main-color-dark);
+}
+
+.card_title {
+    margin-top: 19px;
+}
+
+.card_about, .card_reviews {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-normal);
+}
+
+.card_reviews {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.5);
+}
+
+.star-icon{
+    width: 22px;
+    height: 22px;
+}
+
+.card_action-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.like-icon {
+    width: 28px;
+    height: 25px;
+}
+
+.compare-icon {
+    width: 26px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+.like-icon, .compare-icon {
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.temporary-item-instead-history {
+    margin: 30px auto;
+}
+
+.single-product-card {
+    display: flex;
+}
+
+.single-product-card_info {
+    flex-grow: 1;
+}
+
+.tab-wrapper {
+    margin: 120px auto !important;
+}

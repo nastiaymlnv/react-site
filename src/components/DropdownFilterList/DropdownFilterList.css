@@ -1,0 +1,51 @@
+.dropdown {
+    background: var(--card-background);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: var(--main-color-dark);
+    padding: 13px 30px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
+    line-height: 24px;
+    color: var(--main-color-light);
+    cursor: pointer;
+}
+
+.dropdown_title {
+    display: inline;
+}
+
+.dropdown_arrow__change {
+    transform: rotate(180deg);
+}
+
+.dropdown_list__change {
+    display: none;
+}
+
+.dropdown_list {
+    padding: 11px 30px 20px;
+}
+
+.dropdown_list-item {
+    padding: 10px 0;
+}
+
+.dropdown_list-label {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown_list-item-name {
+    margin: 0 15px;
+}
+
+.dropdown_list_quantity {
+    color: var(--link-color);
+}

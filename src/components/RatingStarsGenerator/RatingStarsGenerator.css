@@ -1,0 +1,8 @@
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.rating :not(:last-child){
+    margin-right: 10px;
+}
